@@ -1,12 +1,14 @@
 import React from 'react';
+import Diplomes from '../Components/Diplomes';
+import Experiences from "../Components/Experiences"
 
 const Competences = () => {
-    const skills = [  
-    ]
     return (
-        <div><h1>
-            compétences
-        </h1></div>
+        
+        <div>
+            <Diplomes/>
+            <Experiences/>
+        </div>
     
     );
 };
