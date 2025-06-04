@@ -1,9 +1,11 @@
 import React from 'react';
 
 const Competences = () => {
+    const skills = [  
+    ]
     return (
         <div><h1>
-            ici c'est compétences
+            compétences
         </h1></div>
     
     );
