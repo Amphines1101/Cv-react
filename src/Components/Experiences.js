@@ -10,7 +10,7 @@ const Experiences = () => {
                     <li key={index}>
                         <h3>
                             ({exp.poste} - {exp.entreprise})</h3>
-                            <p><strong>{exp.dates}</strong></p>
+                            <p>{exp.date}</p>
                             <p>{exp.description}</p>
 
                     </li>
