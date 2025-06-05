@@ -19,7 +19,7 @@ const Projets = () => {
         {projetsData.map((projet, index) => (
           <div key={index} onClick={() => ouvrirModal(projet)} style={{ cursor: 'pointer' }}>
             <img
-              src={require(`../media/${projet.image}`)}
+              src={`/${projet.image}`}
               alt={projet.nom}
               style={{ width: '200px', height: 'auto', borderRadius: '10px' }}
             />
@@ -30,24 +30,35 @@ const Projets = () => {
 
       {projetActif && (
         <div style={{
-          position: 'fixed', top: 0, left: 0,
-          width: '100%', height: '100%',
-          backgroundColor: 'rgba(0,0,0,0.7)', display: 'flex',
-          justifyContent: 'center', alignItems: 'center'
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0,0,0,0.7)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 1000
         }}>
           <div style={{
-            background: '#fff', padding: '20px',
-            borderRadius: '10px', width: '400px', position: 'relative'
+            background: '#fff',
+            padding: '20px',
+            borderRadius: '10px',
+            width: '400px',
+            position: 'relative'
           }}>
             <button onClick={fermerModal} style={{ position: 'absolute', top: 10, right: 10 }}>X</button>
             <h3>{projetActif.nom}</h3>
             <img
-              src={require(`../media/${projetActif.image}`)}
+              src={`/${projetActif.image}`}
               alt={projetActif.nom}
               style={{ width: '100%', marginBottom: '10px' }}
             />
             <p><strong>Description :</strong> {projetActif.description}</p>
-            <p><strong>Langages :</strong> {projetActif.langage}</p>
+            {projetActif.langage && (
+              <p><strong>Langages :</strong> {projetActif.langage}</p>
+            )}
             <a href={projetActif.github} target="_blank" rel="noreferrer">Voir sur GitHub</a>
           </div>
         </div>
