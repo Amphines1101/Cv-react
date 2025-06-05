@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import projetsData from '../data/projets.json';
+import projetsData from '../data/projetsData.json';
 
 const Projets = () => {
   const [projetActif, setProjetActif] = useState(null);
