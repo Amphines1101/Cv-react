@@ -8,7 +8,7 @@
   },
   {
     "nom": "Memor'able",
-    "image": "image/substitueMemorable.png",
+    "image": "image/substitueMemorable.jpg",
     "description": "Un jeu de memory en ligne.",
     "github": "https://github.com/Ecole-Coding-Factory/projet-flash-pg1",
     "langage": "Html/CSS , PHP, SQL, Javascript"
@@ -24,6 +24,6 @@
     "nom": "Princess Quest",
     "image": "image/Princess-Quest.png",
     "description": "Un jeu de 2D de style fantasy développé sur Godot.",
-    "github": "https://github.com/nesrine/quiz-game"
+    "github": "https://github.com/felicienbouryesieeit/labdayv2"
   }
 ]

@@ -9,8 +9,8 @@ const Home = () => {
         <a
         href={CV}
         download="Nesrine-Larbi-CV.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
+        target="_blank" // ouvre dans une nouvelle page
+        rel="noopener noreferrer" //sécurité de windows opener et pour pas tracer dans l'url
         style={{
           display: 'inline-block',
           marginTop: '20px',
@@ -21,7 +21,7 @@ const Home = () => {
           textDecoration: 'none',
         }}
       >
-        Télécharger mon CV
+        Télécharger mon CV format PDF
     </a>
         </div>
     
