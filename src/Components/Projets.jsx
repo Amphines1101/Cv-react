@@ -3,13 +3,30 @@ import projetsData from '../data/projetsData.json';
 
 const Projets = () => {
   const [projetActif, setProjetActif] = useState(null);
+  const [imageIndex, setImageIndex] = useState(0);
 
   const ouvrirModal = (projet) => {
     setProjetActif(projet);
+    setImageIndex(0); // on démarre à la première image
   };
 
   const fermerModal = () => {
     setProjetActif(null);
+    setImageIndex(0);
+  };
+
+  const imageSuivante = () => {
+    if (projetActif && projetActif.images.length > 0) {
+      setImageIndex((prevIndex) => (prevIndex + 1) % projetActif.images.length);
+    }
+  };
+
+  const imagePrecedente = () => {
+    if (projetActif && projetActif.images.length > 0) {
+      setImageIndex((prevIndex) =>
+        (prevIndex - 1 + projetActif.images.length) % projetActif.images.length
+      );
+    }
   };
 
   return (
@@ -18,11 +35,13 @@ const Projets = () => {
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
         {projetsData.map((projet, index) => (
           <div key={index} onClick={() => ouvrirModal(projet)} style={{ cursor: 'pointer' }}>
-            <img
-              src={`/${projet.image}`}
-              alt={projet.nom}
-              style={{ width: '200px', height: 'auto', borderRadius: '10px' }}
-            />
+            {projet.images && projet.images.length > 0 && (
+              <img
+                src={`/${projet.images[0]}`}
+                alt={projet.nom}
+                style={{ width: '200px', height: 'auto', borderRadius: '10px' }}
+              />
+            )}
             <p>{projet.nom}</p>
           </div>
         ))}
@@ -46,15 +65,32 @@ const Projets = () => {
             padding: '20px',
             borderRadius: '10px',
             width: '400px',
-            position: 'relative'
+            position: 'relative',
+            textAlign: 'center'
           }}>
             <button onClick={fermerModal} style={{ position: 'absolute', top: 10, right: 10 }}>X</button>
             <h3>{projetActif.nom}</h3>
-            <img
-              src={`/${projetActif.image}`}
-              alt={projetActif.nom}
-              style={{ width: '100%', marginBottom: '10px' }}
-            />
+
+            {projetActif.images && projetActif.images.length > 0 && (
+              <div style={{ position: 'relative' }}>
+                <button onClick={imagePrecedente} style={{
+                  position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)'
+                }}>
+                  ◀
+                </button>
+                <img
+                  src={`/${projetActif.images[imageIndex]}`}
+                  alt={`${projetActif.nom} ${imageIndex + 1}`}
+                  style={{ width: '100%', marginBottom: '10px', borderRadius: '8px' }}
+                />
+                <button onClick={imageSuivante} style={{
+                  position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)'
+                }}>
+                  ▶
+                </button>
+              </div>
+            )}
+
             <p><strong>Description :</strong> {projetActif.description}</p>
             {projetActif.langage && (
               <p><strong>Langages :</strong> {projetActif.langage}</p>
