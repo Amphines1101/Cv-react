@@ -8,19 +8,20 @@ const Contact = () => {
   return (
     <div className="contact-page">
       <div className="top-half">
-        <img src="/image/Green-map.png" alt="Monde vert" className="world-image" />
-        <div className="contact-info-box">
-          <h2>Contactez-moi</h2>
-          <p><strong>Téléphone :</strong> 06 52 07 15 20</p>
-          <p><strong>Email :</strong> nlarbi2007@gmail.com</p>
-          <div className="social-icons">
-            <a href="https://github.com/Amphines1101" target="_blank" rel="noopener noreferrer">
-              <img src={github} alt="GitHub" />
-            </a>
-            <a href="https://www.linkedin.com/in/nesrine-larbi-0ab170348/" target="_blank" rel="noopener noreferrer">
-              <img src={linkedin} alt="LinkedIn" />
-            </a>
-          </div>
+        <img src="/image/green-world-map.jpg" alt="Monde vert" className="world-image" />
+      </div>
+
+      <div className="contact-info-box">
+        <h2>Contactez-moi</h2>
+        <p><strong>Téléphone :</strong> 06 52 07 15 20</p>
+        <p><strong>Email :</strong> nlarbi2007@gmail.com</p>
+        <div className="social-icons">
+          <a href="https://github.com/Amphines1101" target="_blank" rel="noopener noreferrer">
+            <img src={github} alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/nesrine-larbi-0ab170348/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedin} alt="LinkedIn" />
+          </a>
         </div>
       </div>
 
@@ -35,4 +36,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
