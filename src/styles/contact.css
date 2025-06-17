@@ -1,0 +1,101 @@
+/* Container global */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #314f1a; /* Vert foncé lisible */
+}
+
+/* Haut : image monde */
+.top-half {
+  flex: 1;
+  background-color: #8cb369; /* Vert clair complémentaire */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.world-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Milieu : carré infos contact centré */
+.middle-info-box {
+  width: 118px;
+  height: 59px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 0.5rem;
+  margin: -30px auto 0; /* Pour chevaucher un peu top et bottom */
+  text-align: center;
+  font-size: 0.75rem;
+  color: #314f1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  z-index: 10;
+  position: relative;
+}
+
+.middle-info-box h2 {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.middle-info-box p {
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* Icônes réseaux sociaux */
+.social-icons {
+  margin-top: 4px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.social-icons img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: invert(22%) sepia(62%) saturate(505%) hue-rotate(64deg) brightness(93%) contrast(87%);
+  /* filtre pour un vert léger, tu peux ajuster */
+  transition: filter 0.3s;
+}
+
+.social-icons a:hover img {
+  filter: none; /* couleur originale au hover */
+}
+
+/* Bas : fond vert foncé + formulaire dans un carré */
+.bottom-half {
+  flex: 1;
+  background-color: #4e774e; /* vert foncé */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  color: #314f1a;
+}
+
+/* Ajustements pour les titres dans form-container */
+.form-container h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}

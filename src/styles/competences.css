@@ -1,0 +1,103 @@
+.skills-page {
+  padding: 2rem;
+  background: linear-gradient(to bottom right, #94b16f, #b3d07e);
+  min-height: 100vh;
+  color: #53663e; /* texte par défaut plus foncé */
+  font-family: 'Poppins', sans-serif; /* changé de Fredoka à Poppins */
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.skills-content {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  height: calc(100vh - 4rem);
+}
+
+.skill-card.competences {
+  flex: 2;
+  background-color: rgba(190, 218, 157, 0.15);
+  border: 1px solid #beda9d;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(190, 218, 157, 0.4);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
+
+.skill-card.diplomes,
+.skill-card.experiences {
+  background-color: rgba(190, 218, 157, 0.15);
+  border: 1px solid #beda9d;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(190, 218, 157, 0.4);
+  flex: 1;
+  overflow-y: auto;
+}
+
+.skill-card h1,
+.skill-card h2,
+.skill-card h3 {
+  color: #68804f; /* titres foncés */
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #68804f;
+  padding-bottom: 0.5rem;
+}
+
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-card li {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  color: #53663e; /* texte de liste */
+}
+
+.bar-container {
+  background-color: #beda9d;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+  margin-top: 0.5rem;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(to right, #94b16f, #b3d07e);
+  transition: width 0.5s ease;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .skills-content {
+    flex-direction: column;
+    height: auto;
+  }
+  .skill-card.competences,
+  .skill-card.diplomes,
+  .skill-card.experiences {
+    height: auto;
+    flex: none;
+  }
+  .right-column {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}

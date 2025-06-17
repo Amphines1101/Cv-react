@@ -1,19 +1,27 @@
 import React from 'react';
 import Diplomes from '../Components/Diplomes';
-import Experiences from "../Components/Experiences"
+import Experiences from "../Components/Experiences";
 import Langages from '../Components/Langages';
 
 const Competences = () => {
-    return (
-        
-        <div>
-            <Diplomes/>
-            <Experiences/>
-            <Langages/>
+  return (
+    <div className="skills-page">
+      <div className="skills-content">
+        <div className="skill-card competences">
+          <Langages />
         </div>
-        
-    
-    );
+
+        <div className="right-column">
+          <div className="skill-card diplomes">
+            <Diplomes />
+          </div>
+          <div className="skill-card experiences">
+            <Experiences />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Competences;

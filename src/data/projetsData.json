@@ -8,7 +8,7 @@
   },
   {
     "nom": "Memor'able",
-    "images": ["image/substitueMemorable.jpg"],
+    "images": ["image/Mémorable.png"],
     "description": "Un jeu de memory en ligne.",
     "github": "https://github.com/Ecole-Coding-Factory/projet-flash-pg1",
     "langage": "Html/CSS , PHP, SQL, Javascript"

@@ -1,32 +1,25 @@
 import React from 'react';
 import langagesData from '../data/langages.json';
 
-const calculerPourcentage = (annees) => {
-  const max = 3;
-  return Math.min((annees / max) * 100, 100);
+const calculerPourcentage = (mois) => {
+  const maxMois = 36; // max 36 mois
+  return Math.min((mois / maxMois) * 100, 100);
 };
 
 const Langages = () => {
   return (
     <div>
       <h2>Langages</h2>
-      <ul style={{ listStyle: 'none', padding: 0 }}>
+      <ul>
         {langagesData.map((langage, index) => {
           const pourcentage = calculerPourcentage(langage.experience);
           return (
-            <li key={index} style={{ marginBottom: '15px' }}>
+            <li key={index}>
               <strong>{langage.nom}</strong>
-              <div style={{ background: '#ddd', borderRadius: '5px', overflow: 'hidden', height: '20px', marginTop: '5px' }}>
-                <div
-                  style={{
-                    width: `${pourcentage}%`,
-                    background: '#4CAF50',
-                    height: '100%',
-                    transition: 'width 0.5s ease'
-                  }}
-                />
+              <div className="bar-container">
+                <div className="bar" style={{ width: `${pourcentage}%` }}></div>
               </div>
-              <small>{langage.experience} an(s) d’expérience</small>
+              <small>{langage.experience} mois d’expérience</small>
             </li>
           );
         })}

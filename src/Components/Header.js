@@ -2,22 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Photo from "../media/photo-nesrine-larbi.jpg";
 
-
 const Header = () => {
-    return (
-        <div>    
-            <header style={{ backgroundColor: '#222', padding: '1rem', color: 'white' }}>
-                <h1>Nesrine Larbi</h1>
-                <img src ={Photo} alt="photo-nesrine" style={{ height: '50px', marginRight: '10px' }} />
-            <nav>
-        <Link to="/" style={{ margin: '0 10px', color: 'white', textDecoration: 'none' }}>Accueil</Link>
-        <Link to="/competences" style={{ margin: '0 10px', color: 'white', textDecoration: 'none' }}>Compétences</Link>
-        <Link to="/portfolio" style={{ margin: '0 10px', color: 'white', textDecoration: 'none' }}>Portfolio</Link>
-        <Link to="/contact" style={{ margin: '0 10px', color: 'white', textDecoration: 'none' }}>Contact</Link>
-            </nav>
-            </header>
-        </div>
-    );
+  return (
+    <div className="sidebar">
+      <div className="photoWrapper">
+        <img src={Photo} alt="Nesrine Larbi" className="photo" />
+      </div>
+      <h1 className="name">Nesrine Larbi</h1>
+      <nav className="nav">
+        <Link to="/" className="link">Accueil</Link>
+        <Link to="/competences" className="link">Compétences</Link>
+        <Link to="/portfolio" className="link">Portfolio</Link>
+        <Link to="/contact" className="link">Contact</Link>
+      </nav>
+    </div>
+  );
 };
 
 export default Header;

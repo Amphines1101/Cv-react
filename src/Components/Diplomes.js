@@ -4,7 +4,7 @@ import diplomesData from "../data/diplomes.json";
 const Diplomes = () => {
     return (
         <div>
-           <h2>Diplômes</h2>
+           <h3>Diplômes</h3>
             <ul>
                 {diplomesData.map((diplome, index)=> (
                     <li key={index}>
