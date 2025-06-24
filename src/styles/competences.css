@@ -2,8 +2,8 @@
   padding: 2rem;
   background: linear-gradient(to bottom right, #94b16f, #b3d07e);
   min-height: 100vh;
-  color: #53663e; /* texte par défaut plus foncé */
-  font-family: 'Poppins', sans-serif; /* changé de Fredoka à Poppins */
+  color: #53663e; 
+  font-family: 'Poppins', sans-serif; 
   overflow-y: hidden;
   display: flex;
   justify-content: center;
@@ -51,7 +51,7 @@
 .skill-card h1,
 .skill-card h2,
 .skill-card h3 {
-  color: #68804f; /* titres foncés */
+  color: #68804f; 
   margin-bottom: 1rem;
   font-size: 1.5rem;
   border-bottom: 1px solid #68804f;
@@ -67,7 +67,7 @@
 .skill-card li {
   margin-bottom: 1rem;
   line-height: 1.4;
-  color: #53663e; /* texte de liste */
+  color: #53663e; 
 }
 
 .bar-container {

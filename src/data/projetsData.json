@@ -7,8 +7,8 @@
     "langage": "Java"
   },
   {
-    "nom": "Memor'able",
-    "images": ["image/Mémorable.png"],
+    "nom": "Mémor'able",
+    "images": ["image/Memorable.png"],
     "description": "Un jeu de memory en ligne.",
     "github": "https://github.com/Ecole-Coding-Factory/projet-flash-pg1",
     "langage": "Html/CSS , PHP, SQL, Javascript"
