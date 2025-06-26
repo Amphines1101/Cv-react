@@ -1,134 +1,148 @@
-.portfolio-page {
-  padding: 2rem;
-  background: linear-gradient(to bottom right, #94b16f, #b3d07e);
-  min-height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
-  color: #53663e;
+  background-color: #a5c96e; 
+  color: #2e3c20;
 }
+
+
+header {
+  background-color: #3d4f2e;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.portfolio-page {
+  background-color: #b3d07e;
+  font-family: 'Poppins', sans-serif;
+  color: #2e3c20;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 1000px;   
+  width: 100%;               
+}
+
 
 .portfolio-title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #68804f;
-  border-bottom: 2px solid #68804f;
-  padding-bottom: 0.5rem;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
 }
 
 .project-card {
-  background-color: rgba(190, 218, 157, 0.2);
-  border: 1px solid #beda9d;
-  border-radius: 20px;
-  width: 200px;
+  background: #94b16f;
+  border-radius: 15px;
   padding: 1rem;
   text-align: center;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(190, 218, 157, 0.4);
-  transition: transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 300px;
+  height: 300px;
+  
 }
 
-.project-card:hover {
-  transform: scale(1.05);
+.project-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
-.project-card img {
+.project-image {
   width: 100%;
+  max-height: 170px;
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 0.5rem;
 }
 
-.project-card p {
-  font-weight: bold;
-  color: #53663e;
-  margin-bottom: 0.5rem;
-}
-
-.project-card .plus-btn {
-  font-size: 1.8rem;
-  color: #68804f;
-  background: white;
+.plus-btn {
+  background-color: #3d4f2e;
+  color: white;
   border: none;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+  font-size: 1.5rem;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
 }
-
-.project-card .plus-btn:hover {
-  transform: scale(1.1);
-  background: #f6fff0;
-}
-
-/* MODAL */
 
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(45, 61, 32, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .modal-content {
-  background: #f0f8ea;
-  padding: 2rem;
+  background-color: #e4f1d7;
   border-radius: 20px;
-  width: 400px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
   position: relative;
-  text-align: center;
-  color: #53663e;
-  box-shadow: 0 0 15px rgba(190, 218, 157, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.modal-content h3 {
-  margin-bottom: 1rem;
-  color: #68804f;
+.modal-image-container {
+  position: relative;
+  margin: 1rem 0;
 }
 
-.modal-content img {
+.modal-image-container img {
   width: 100%;
   border-radius: 10px;
-  margin-bottom: 1rem;
 }
 
-.modal-content button {
-  background: none;
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
   border: none;
   font-size: 1.5rem;
-  color: #68804f;
+  color: white;
   cursor: pointer;
 }
 
-.modal-content .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-}
+.nav-btn:first-child { left: 0; }
+.nav-btn:last-child { right: 0; }
 
 .modal-content a {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #68804f;
+  color: #3d4f2e;
   text-decoration: underline;
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.retour-btn {
+  margin-top: 2rem;
+  align-self: center;
+  background-color: #53663e;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.retour-btn:hover {
+  background-color: #3d4f2e;
 }

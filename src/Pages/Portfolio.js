@@ -5,7 +5,6 @@ import '../styles/portfolio.css';
 const Portfolio = () => {
   return (
     <div>
-      <h1>Portfolio</h1>
       <Projets />
     </div>
   );

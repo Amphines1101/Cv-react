@@ -2,14 +2,14 @@ import React from 'react';
 import langagesData from '../data/langages.json';
 
 const calculerPourcentage = (mois) => {
-  const maxMois = 36; // max 36 mois
+  const maxMois = 36; 
   return Math.min((mois / maxMois) * 100, 100);
 };
 
 const Langages = () => {
   return (
     <div>
-      <h2>Langages</h2>
+      <h3>Langages</h3>
       <ul>
         {langagesData.map((langage, index) => {
           const pourcentage = calculerPourcentage(langage.experience);

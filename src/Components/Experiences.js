@@ -4,12 +4,12 @@ import experiences from "../data/expériences.json";
 const Experiences = () => {
     return (
         <div>
-           <h1> Experiences </h1>
+           <h3> Experiences </h3>
             <ul>
                 {experiences.map((exp, index)=> (
                     <li key={index}>
-                        <h3>
-                            ({exp.poste} - {exp.entreprise})</h3>
+                        <h2>
+                            ({exp.poste} - {exp.entreprise})</h2>
                             <p>{exp.date}</p>
                             <p>{exp.description}</p>
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import projetsData from '../data/projetsData.json';
-import '../styles/portfolio.css'; // Assure-toi que ce chemin est correct
+import '../styles/portfolio.css';
 
 const Projets = () => {
   const [projetActif, setProjetActif] = useState(null);
@@ -18,15 +18,13 @@ const Projets = () => {
 
   const imageSuivante = () => {
     if (projetActif?.images?.length > 0) {
-      setImageIndex((prevIndex) => (prevIndex + 1) % projetActif.images.length);
+      setImageIndex((prev) => (prev + 1) % projetActif.images.length);
     }
   };
 
   const imagePrecedente = () => {
     if (projetActif?.images?.length > 0) {
-      setImageIndex((prevIndex) =>
-        (prevIndex - 1 + projetActif.images.length) % projetActif.images.length
-      );
+      setImageIndex((prev) => (prev - 1 + projetActif.images.length) % projetActif.images.length);
     }
   };
 
@@ -37,10 +35,10 @@ const Projets = () => {
       <div className="projects-grid">
         {projetsData.map((projet, index) => (
           <div key={index} className="project-card">
+            <p className="project-title">{projet.nom}</p>
             {projet.images?.[0] && (
-              <img src={`/${projet.images[0]}`} alt={projet.nom} />
+              <img src={`/${projet.images[0]}`} alt={projet.nom} className="project-image" />
             )}
-            <p>{projet.nom}</p>
             <button className="plus-btn" onClick={() => ouvrirModal(projet)}>+</button>
           </div>
         ))}
@@ -49,25 +47,16 @@ const Projets = () => {
       {projetActif && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <button className="close-btn" onClick={fermerModal}>X</button>
             <h3>{projetActif.nom}</h3>
 
             {projetActif.images?.length > 0 && (
-              <div style={{ position: 'relative' }}>
-                <button onClick={imagePrecedente} style={{
-                  position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)'
-                }}>
-                  ◀
-                </button>
+              <div className="modal-image-container">
+                <button onClick={imagePrecedente} className="nav-btn">◀</button>
                 <img
                   src={`/${projetActif.images[imageIndex]}`}
                   alt={`${projetActif.nom} ${imageIndex + 1}`}
                 />
-                <button onClick={imageSuivante} style={{
-                  position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)'
-                }}>
-                  ▶
-                </button>
+                <button onClick={imageSuivante} className="nav-btn">▶</button>
               </div>
             )}
 
@@ -75,9 +64,13 @@ const Projets = () => {
             {projetActif.langage && (
               <p><strong>Langages :</strong> {projetActif.langage}</p>
             )}
-            <a href={projetActif.github} target="_blank" rel="noreferrer">
-              Voir sur GitHub
-            </a>
+            {projetActif.github && (
+              <a href={projetActif.github} target="_blank" rel="noreferrer">
+                Voir sur GitHub
+              </a>
+            )}
+
+            <button className="retour-btn" onClick={fermerModal}>Retourner sur la page</button>
           </div>
         </div>
       )}

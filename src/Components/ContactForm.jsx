@@ -29,38 +29,40 @@ const ContactForm = () => {
     }
   };
 
-  return (
-    <form onSubmit={handleSubmit} style={{ marginTop: '2rem' }}>
-      <input
-        type="text"
-        name="nom"
-        placeholder="Votre nom"
-        value={formData.nom}
-        onChange={handleChange}
-        required
-        style={{ display: 'block', margin: '10px 0', padding: '10px', width: '100%' }}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Votre email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-        style={{ display: 'block', margin: '10px 0', padding: '10px', width: '100%' }}
-      />
-      <textarea
-        name="message"
-        placeholder="Votre message"
-        value={formData.message}
-        onChange={handleChange}
-        required
-        rows={5}
-        style={{ display: 'block', margin: '10px 0', padding: '10px', width: '100%' }}
-      />
-      <button type="submit" style={{ padding: '10px 20px' }}>Envoyer</button>
-    </form>
-  );
+return (
+  <form className="contact-form" onSubmit={handleSubmit}>
+  <input
+    type="text"
+    name="nom"
+    placeholder="Votre nom"
+    value={formData.nom}
+    onChange={handleChange}
+    required
+    className="contact-input"
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Votre email"
+    value={formData.email}
+    onChange={handleChange}
+    required
+    className="contact-input"
+  />
+  <textarea
+    name="message"
+    placeholder="Votre message"
+    value={formData.message}
+    onChange={handleChange}
+    required
+    className="contact-textarea"
+    rows={5}
+  />
+  <button type="submit" className="contact-button">Envoyer</button>
+</form>
+
+);
+
 };
 
 export default ContactForm;
