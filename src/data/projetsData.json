@@ -1,10 +1,9 @@
 [
   {
-    "nom": "PharmaPlus",
-    "images": ["image/pharmaplus1.png", "image/pharmaplus2.png" , "image/pharmaplus3.png", "image/pharmaplus4.png", "image/pharmaplus5.png", "image/pharmaplus6.png", "image/pharmaplus7.png" ],
-    "description": "Un prototype de simulateur de logiciel de gestion des stocks d'une pharmacie.",
-    "github": "https://github.com/Maxence-villet/PharmaPlus",
-    "langage": "Java"
+    "nom": "Princess Quest",
+    "images": ["image/Princess-quest-opening.gif",  "image/princess-quest1.png", "image/princess-quest2.png", "image/princess-quest3.png", "image/princess-quest4.png", "image/Princess-Quest.png"],
+    "description": "Un jeu 2D de style fantasy développé sur Godot.",
+    "github": "https://github.com/felicienbouryesieeit/labdayv2"
   },
   {
     "nom": "Mémor'able",
@@ -21,9 +20,10 @@
     "langage": "Html/CSS , PHP, SQL, Javascript"
   },
   {
-    "nom": "Princess Quest",
-    "images": ["image/Princess-quest-opening.gif",  "image/princess-quest1.png", "image/princess-quest2.png", "image/princess-quest3.png", "image/princess-quest4.png", "image/Princess-Quest.png"],
-    "description": "Un jeu 2D de style fantasy développé sur Godot.",
-    "github": "https://github.com/felicienbouryesieeit/labdayv2"
+    "nom": "PharmaPlus",
+    "images": ["image/pharmaplus1.png", "image/pharmaplus2.png" , "image/pharmaplus3.png", "image/pharmaplus4.png", "image/pharmaplus5.png", "image/pharmaplus6.png", "image/pharmaplus7.png" ],
+    "description": "Un prototype de simulateur de logiciel de gestion des stocks d'une pharmacie.",
+    "github": "https://github.com/Maxence-villet/PharmaPlus",
+    "langage": "Java"
   }
 ]

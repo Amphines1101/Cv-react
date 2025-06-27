@@ -14,7 +14,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch('/save-message', {
+      await fetch('http://localhost:3001/save-message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

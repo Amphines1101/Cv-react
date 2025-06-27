@@ -30,7 +30,7 @@ const Projets = () => {
 
   return (
     <div className="portfolio-page">
-      <h2 className="portfolio-title">Mes Projets</h2>
+      <h1 className="portfolio-title">Mes Projets</h1>
 
       <div className="projects-grid">
         {projetsData.map((projet, index) => (

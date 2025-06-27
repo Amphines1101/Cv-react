@@ -1,17 +1,49 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const nodemailer = require('nodemailer');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001; 
 
 app.use(cors());
 app.use(express.json());
 
+const buildPath = path.join(__dirname, 'build');
+app.use(express.static(buildPath));
 
 const filePath = path.join(__dirname, 'src', 'data', 'messages.json');
 
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS
+  }
+});
+
+function sendEmail(messageData) {
+  const mailOptions = {
+    from: process.env.MAIL_USER,
+    to: process.env.MAIL_USER,
+    subject: `Nouveau message de ${messageData.nom}`,
+    text: `
+Nom : ${messageData.nom}
+Email : ${messageData.email}
+Message : ${messageData.message}
+    `
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Erreur d’envoi de mail :', error);
+    } else {
+      console.log('Email envoyé : ' + info.response);
+    }
+  });
+}
 
 app.post('/save-message', (req, res) => {
   const newMessage = req.body;
@@ -31,6 +63,7 @@ app.post('/save-message', (req, res) => {
     }
 
     messages.push(newMessage);
+    sendEmail(newMessage);
 
     fs.writeFile(filePath, JSON.stringify(messages, null, 2), (err) => {
       if (err) {
@@ -43,7 +76,10 @@ app.post('/save-message', (req, res) => {
   });
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
+});
 
 app.listen(PORT, () => {
-  console.log(` Serveur lancé : http://localhost:${PORT}`);
+  console.log(`✅ Serveur lancé : http://localhost:${PORT}`);
 });
