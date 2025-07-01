@@ -1,5 +1,5 @@
 import React from 'react';
-import CV from "../media/cv-nesrine-larbi.pdf";
+import CV from "../media/larbi-nesrine.pdf";
 
 const Home = () => {
   return (
